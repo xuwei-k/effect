@@ -4,7 +4,7 @@ jdk:
 
 script:
   - sbt ";+check ;+cpl ;+lint ;+doc ;+test"
-  - if [ "${TRAVIS_EVENT_TYPE}" == "push" ] && [ "${TRAVIS_BRANCH}" == "master" ] && [ "${TRAVIS_REPO_SLUG}" == "scalaz/ioeffect" ] ; then sbt publish ; fi
+  - sbt publish
 
 before_cache:
   - find $HOME/.sbt -name "*.lock" | xargs rm
